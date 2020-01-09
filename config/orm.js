@@ -11,7 +11,17 @@ const orm = {
                 throw err;
             }
            cb(res) 
-        })
+        });
     },
+    
+    insertOne: function(table_name, col_name, vals) {
+        const queryStr = `INSERT INTO ${table_name} (${col_name.toString()}) VALUES ${vals}`
+        connection.query(queryStr, function(err, res) { 
+            if (err) {
+                throw err;
+            }
+            cb(res)
+        });
+    }
 }
 
