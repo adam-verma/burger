@@ -1,14 +1,20 @@
 // Require Node Package
 mysql = require('mysql');
+let connection; 
 
 // Establish Connection with DB
-const connection = mysql.createConnection({
+if(process.env.JAWSDB_URL) {
+    connection = mysql.createConnection
+    (process.allowedNodeEnvironmentFlags.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
     password: "",
     database: "burgers_db"
   });
+}; 
 
   // Check for error
   connection.connect(function (err) {
