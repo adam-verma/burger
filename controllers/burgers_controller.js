@@ -1,2 +1,4 @@
-const orm = require('./config/orm.js');
+// Require burgers.js
+const burger = require('../models/burger.js');
 
+// 
