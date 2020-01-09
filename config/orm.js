@@ -22,6 +22,16 @@ const orm = {
             }
             cb(res)
         });
+    },
+
+    updateOne: function(table_name, col_name, condition) {
+        const queryStr = `UPDATE ${table_name} SET ${col_name} WHERE ${condition}`
+        connection.query(queryStr, function(err,res) {
+            if (err) {
+                throw err;
+            }
+            cb(res); 
+        });
     }
 }
 
