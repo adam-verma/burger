@@ -25,9 +25,9 @@
                             <span> {{this.id}} : {{this.burger_name}} </span>
 
                             <form class="create-form" method="POST" action="/{{this.id}}?_method=PUT">
-                               <input type="hidden" id="burgname" name="devoured" value="true">
+                                <input type="hidden" id="burgname" name="devoured" value="true">
 
-                                <button type="submit" class="btn btn-success">Om nom nom nom!</button> 
+                                <button type="submit" class="btn btn-success">Om nom nom nom!</button>
                             </form>
                             {{/unless}}
                             {{/each}}
@@ -36,8 +36,23 @@
                     </div>
                 </div>
             </div>
+
+            <!--List of Devoured Burgers-->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><strong>Burgers Devoured List</strong></div>
+                    <div class="card-body">
+                        <li>
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            <span> {{this.id}} : {{this.burger_name}} </span>
+                            {{/if}}
+                            {{/each}}
+                        </li>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-
-
