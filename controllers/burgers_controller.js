@@ -14,6 +14,7 @@ router.get("/", function(req, res) {
         // console.log(hbsObject);
         res.render("index",hbsObject);
     });
+    res.redirect("/");
 });
 
 router.post("/api/burgers", function(req, res) {
@@ -24,6 +25,7 @@ router.post("/api/burgers", function(req, res) {
     ], function(data) {
         res.json({ id: data.insertId });
     });
+    res.redirect("/");
 });
 
 router.put("/api/burgers/:id", function(req, res) {
@@ -40,6 +42,7 @@ router.put("/api/burgers/:id", function(req, res) {
             res.status(200).end();
           }
     })
+    res.redirect("/");
 });
 
 module.exports = router; 
