@@ -1,10 +1,10 @@
 -- Drop the burgers_db database if already exists 
-DROP DATABASE IF EXISTS burgers_db;
+DROP DATABASE IF EXISTS h6mmoj5dbwnra8gn;
 
 -- Create database and specify it for use
-CREATE DATABASE burgers_db; 
+CREATE DATABASE h6mmoj5dbwnra8gn;
 
-USE burgers_db;
+USE h6mmoj5dbwnra8gn;
 
 -- Create the table burger.
 CREATE TABLE burgers (
