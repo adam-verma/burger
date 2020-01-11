@@ -23,7 +23,6 @@ router.post("/api/burgers", function(req, res) {
         req.body.burger_name
     ], function(data) {
         res.json({ id: data.insertId });
-        res.redirect("/");
     });
 });
 
@@ -40,7 +39,6 @@ router.put("/api/burgers/:id", function(req, res) {
           } else {
             res.status(200).end();
           }
-        res.redirect("/");
     })
 });
 

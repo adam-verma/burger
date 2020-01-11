@@ -46,7 +46,7 @@ const orm = {
     },
     
     insertOne: function(table_name, col_name, vals, cb) {
-        const queryStr = `INSERT INTO ${table_name} (${col_name.toString()}) VALUES ${questMarktoStr(vals.length)}`
+        const queryStr = `INSERT INTO ${table_name} (${col_name.toString()}) VALUES (${questMarktoStr(vals.length)})`
         console.log(queryStr);
         connection.query(queryStr, vals, function(err, res) { 
             if (err) {
@@ -54,7 +54,7 @@ const orm = {
             }
             cb(res);
         });
-    },
+    }, 
 
     updateOne: function(table_name, col_name, condition, cb) {
         const queryStr = `UPDATE ${table_name} SET ${objToSql(col_name)} WHERE ${condition}`

@@ -2,7 +2,7 @@
     <!--Form for adding burger-->
     <div class="jumbotron">
 
-        <form class="create-form" method="POST" action="/">
+        <form class="create-form" method="POST" action="/api/burgers">
 
             <div class="form-group">
                 <label for="burgname">Burger Name:</label>
@@ -19,12 +19,12 @@
                 <div class="card">
                     <div class="card-header"><strong>Burger Order Pick-Up</strong></div>
                     <div class="card-body">
-                        <li>
+                        <ul>
                             {{#each burgers}}
                             {{#unless devoured}}
                             <span> {{this.id}} : {{this.burger_name}} </span>
 
-                            <form class="create-form" method="POST" action="/{{this.id}}?_method=PUT">
+                            <form class="create-form" method="POST" action="/api/burgers/{{this.id}}?_method=PUT">
                                 <input type="hidden" id="burgname" name="devoured" value="true">
 
                                 <button type="submit" class="btn btn-success">Om nom nom nom!</button>
@@ -32,7 +32,7 @@
                             {{/unless}}
                             {{/each}}
 
-                        </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -42,13 +42,13 @@
                 <div class="card">
                     <div class="card-header"><strong>Burgers Devoured List</strong></div>
                     <div class="card-body">
-                        <li>
+                        <ul>
                             {{#each burgers}}
                             {{#if devoured}}
                             <span> {{this.id}} : {{this.burger_name}} </span>
                             {{/if}}
                             {{/each}}
-                        </li>
+                        </ul>
                     </div>
                 </div>
             </div>
